@@ -76,7 +76,7 @@ namespace DummyClient
             ushort nameLen = BitConverter.ToUInt16(s.Slice(count, s.Length - count));
             count += sizeof(ushort);
 
-            this.name = Encoding.Unicode.GetString(s.Slice(count, s.Length - count));
+            this.name = Encoding.Unicode.GetString(s.Slice(count, nameLen));
             count += nameLen;
 
             // skill list
