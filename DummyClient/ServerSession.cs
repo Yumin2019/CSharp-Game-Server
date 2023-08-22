@@ -120,13 +120,11 @@ namespace DummyClient
             packet.skill.Add(new PlayerInfoReq.Skill() { id = 102, level = 2, duration = 4.0f });
             packet.skill.Add(new PlayerInfoReq.Skill() { id = 103, level = 3, duration = 5.0f });
 
-
             {
                 ArraySegment<byte> s = packet.Write();
                 if (s != null)
                     Send(s);
             }
-
         }
 
         public override void OnDisconnected(EndPoint endPoint)

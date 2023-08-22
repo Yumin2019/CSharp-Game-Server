@@ -10,16 +10,6 @@ using System.Threading.Tasks;
 namespace Server
 {
 
-    public abstract class Packet
-    {
-        public ushort size;
-        public ushort packetId;
-
-        public abstract ArraySegment<byte> Write();
-        public abstract void Read(ArraySegment<byte> s);
-    }
-
-
     class PlayerInfoReq
     {
         public long playerId;
@@ -107,20 +97,10 @@ namespace Server
         }
     }
 
-    class PlayerInfoOk : Packet
+    class PlayerInfoOk 
     {
         public int hp;
         public int attack;
-
-        public override void Read(ArraySegment<byte> s)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override ArraySegment<byte> Write()
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public enum PacketID
