@@ -13,6 +13,8 @@ namespace Server
         static Listener _listener = new Listener();
         static void Main(string[] args)
         {
+            PacketManager.Instance.Register();
+
             // DNS를 사용하도록 한다.
             string host = Dns.GetHostName();
             IPHostEntry ipHost = Dns.GetHostEntry(host);
